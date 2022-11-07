@@ -24,3 +24,18 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+class RandomWordState extends StatefulWidget {
+  const RandomWordState({Key? key}) : super(key: key);
+
+  @override
+  State<RandomWordState> createState() => _RandomWordStateState();
+}
+
+class _RandomWordStateState extends State<RandomWordState> {
+  @override
+  Widget build(BuildContext context) {
+    final wordPair = WordPair.random();
+    return Text(wordPair.asPascalCase);
+  }
+}
